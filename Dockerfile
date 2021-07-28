@@ -1,4 +1,4 @@
-FROM centos:latest
+FROM centos8
 MAINTAINER pushpkant
 RUN yum install -y httpd \
 zip \
