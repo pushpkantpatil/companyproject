@@ -10,5 +10,5 @@ WORKDIR /var/www/html
 RUN unzip kindle.zip
 RUN cp -rvf markups-kindle/* .
 RUN rm -rf _MACOS markups-kindle kindle.zip
-CMD ["apachectl", "-D", "FORGROUND"]
+CMD ["apachectl", "-D", "FOREGROUND"]
 EXPOSE 80
