@@ -1,6 +1,8 @@
-FROM centos
+FROM ubuntu
 MAINTAINER pushpkant
-RUN yum install -y httpd \
+RUN apt-get update
+RUN apt-get install tzdata
+RUN install -y apache2 \
 zip \
 unzip
 ADD https://www.free-css.com/assets/files/free-css-templates/download/page247/kindle.zip /var/www/html/
@@ -8,5 +10,5 @@ WORKDIR /var/www/html
 RUN unzip kindle.zip
 RUN cp -rvf markups-kindle/* .
 RUN rm -rf _MACOS markups-kindle kindle.zip
-CMD ["/usr/sbin/httpd", "-D", "FORGROUND"]
+CMD ["apachectl", "-D", "FORGROUND"]
 EXPOSE 80
